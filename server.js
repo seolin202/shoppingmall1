@@ -8,8 +8,8 @@ const app = express();
 
 // server.js 파일에서 라우트를 만든 후 상수화 시킴
 // require(경로)를 orderRoutes, productsRoute로 상수화 시킴
-const productsRoute = require('/api/routes/products');
-const ordersRoute = require('api/routes/orders');
+const productsRoute = require('./api/routes/products');
+const ordersRoute = require('./api/routes/orders');
 
 
 

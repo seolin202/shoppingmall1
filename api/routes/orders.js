@@ -7,9 +7,9 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
     res.json({
-        msg: "orders data get"
+        msg: "ordersdata get"
     });
 });
 
 // router를 모듈화 시켜서 내보낸다.
-module.export = router;
+module.exports = router;
