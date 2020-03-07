@@ -7,4 +7,21 @@ router.get('/', (req, res) => {
     });
 });
 
+router.post('/', (req, res) => {
+    res.json({
+        msg: "products posting"
+    });
+});
+
+router.patch('/', (req, res) => {
+    res.json({
+        msg: "products updated"
+    });
+});
+
+router.delete('/', (req, res) => {
+    res.json({
+        msg: "products deleted"
+    });
+});
 module.exports = router;
