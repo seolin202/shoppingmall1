@@ -1,16 +1,18 @@
 // express를 불러온 것
 const express = require('express');
-"hello, my name is Ryn Suh"
-
 const app = express();
-
+const mongoose = require('mongoose');
 
 
 // server.js 파일에서 라우트를 만든 후 상수화 시킴
 // require(경로)를 orderRoutes, productsRoute로 상수화 시킴
 const productsRoute = require('./api/routes/products');
 const ordersRoute = require('./api/routes/orders');
+const mongoDBurl = 'mongodb+srv://seolin202:tjfdls0114**@cluster0-4lqvd.mongodb.net/test?retryWrites=true&w=majority';
 
+mongoose.connect(mongoDBurl, {useNewUrlParser:true, useUnifiedTopology:true})
+    .then(() => console.log("MongDB connected.."))
+    .catch(err => console.log(err.message));
 
 
 app.use('/products', productsRoute);
