@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const morgan = require('morgan');
 
 
 // server.js 파일에서 라우트를 만든 후 상수화 시킴
@@ -14,7 +15,7 @@ mongoose.connect(mongoDBurl, {useNewUrlParser:true, useUnifiedTopology:true})
     .then(() => console.log("MongDB connected.."))
     .catch(err => console.log(err.message));
 
-
+app.use(morgan("dev"));
 app.use('/products', productsRoute);
 app.use('/orders', ordersRoute);
 
